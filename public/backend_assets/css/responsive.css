@@ -1,0 +1,5 @@
+@media only screen and (max-width: 480px) {
+    .mobile-margin-top-10 {
+        margin-top: 10px;
+    }
+}

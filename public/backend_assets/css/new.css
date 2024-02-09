@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #000000 !important;
+   }
+
+.fa-star {
+    color: red;
+}
+
+.table{
+    color: #000 !important;
+}
+.table th {
+    color: #000 !important;
+    text-transform: unset;
+}
+
+.badge {
+    text-transform: unset;
+
+}
+
+.table-dark tr th {
+    color: aliceblue;
+}
+
+.pagination .active .page-link {
+    border-color: #233446;
+    background-color: #233446;
+    color: #fff !important;
+}
+
+.pagination-sm .page-item .page-link {
+    border-radius: 2.25rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #697a8d;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d9dee3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.3rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.bg-ssn-primary{
+    background-color: rgb(53 67 114);
+}
+.btn-primary-ssn{
+    background-color: rgb(53 67 114);
+    color: #fff;
+}
+
+.mr-1{
+    margin-right: 5px;
+}
+
+
+.logo_head{
+    /* font-weight: 600; */
+    background: rgb(53 67 114);
+    padding: 15px;
+    border-radius: 15px 0px;
+    color: white;
+}
+
+.thumbnail {
+    border: 1px dotted;
+    width: 199px !important;
+    height: 133px !important;
+}
+
+.imageupload {
+    border: 2px dotted;
+    padding: 20px;
+    text-align: center;
+}
+
+/* .rmv {
+    margin-top: -65px;
+    margin-left: 121px;
+} */
+
+/* .chng {
+    width: 115px;
+}
+
+.card-block {
+    height: 200px;
+} */
