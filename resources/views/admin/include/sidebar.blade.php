@@ -16,7 +16,7 @@
         </a>
         <ul class="menu-sub">
             <li class="menu-item @yield('brandmenu')">
-                <a href="{{ route('admin.brand.all') }}" class="menu-link">
+                <a href="{{ route('admin.brand.list') }}" class="menu-link">
                     <!-- <i class="menu-icon fa fa-external-link" aria-hidden="true"></i> -->
                     <div data-i18n="Basic Inputs">All Brand</div>
                 </a>

@@ -47,9 +47,11 @@ Route::group(['namespace' => 'Admin'], function () {
 
         //Brand Routes
         Route::group(['prefix' => 'brand', 'as' => 'brand.'], function () {
-            Route::get('/view', [BrandController::class, 'BrandView'])->name('all');
-            Route::get('/add', [BrandController::class, 'BrandAdd'])->name('add');
-            Route::post('/store', [BrandController::class, 'BrandStore'])->name('store');
+            Route::get('list', [BrandController::class, 'list'])->name('list');
+            Route::get('form/{id?}', [BrandController::class, 'form'])->name('form');
+            Route::post('submit', [BrandController::class, 'submit'])->name('submit');
+            Route::get('status/{id}', [BrandController::class, 'status'])->name('status');
+            Route::get('delete', [BrandController::class, 'delete'])->name('delete');
         });
 
 

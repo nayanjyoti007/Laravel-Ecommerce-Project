@@ -31,7 +31,7 @@
                         <h5 class="card-header">
 
                             @if (isset($data) && !empty($data))
-                            Update Brand
+                                Update Brand
                             @else
                                 Add Brand
                             @endif
@@ -40,7 +40,7 @@
 
                         </h5>
                         <div class="card-body">
-                            <form action="{{route('admin.brand.store')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('admin.brand.submit') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <input type="hidden" name="id" value="{{ isset($data) ? $data->id : '' }}">
@@ -77,7 +77,7 @@
                                     </div>
 
                                     <div class="mb-3 col-md-3">
-                                        <img src="{{ isset($data) ? asset('backend_images/' . $data->photo) : '' }}"
+                                        <img src="{{ isset($data) ? asset('backend_images/upload/brand/' . $data->brnad_image) : '' }}"
                                             alt="" width="100px" id="viewImage">
                                     </div>
 
@@ -90,7 +90,7 @@
                                 <button type="submit" id="submit" name="submit" class="btn btn-primary btn-sm mt-3">
                                     Submit </button>
 
-                                <a href="" class="btn btn-warning btn-sm mt-3">Back</a>
+                                <a href="{{ route('admin.brand.list') }}" class="btn btn-warning btn-sm mt-3">Back</a>
                             </form>
 
                         </div>

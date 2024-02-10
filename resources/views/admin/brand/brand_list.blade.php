@@ -55,7 +55,7 @@
                                                 {{ $item->brnad_name_hin }}
                                             </td>
                                             <td>
-                                                <img src="{{asset('backend_images/'.$item->brnad_image)}}" width="120px;" alt="Brand Image">
+                                                <img src="{{asset('backend_images/upload/brand/'. $item->brnad_image)}}" width="30px" alt="Brand Image">
                                             </td>
                                             <td>
 
@@ -81,13 +81,13 @@
 
                                             <td>
 
-                                                <a href=""
+                                                <a href="{{route('admin.brand.form', ['id' => $item->id])}}"
                                                     class="btn btn-primary-ssn btn-sm">
                                                     <i class="fa fa-pencil mr-1" aria-hidden="true"></i> Edit</a>
 
-                                                <a href=""
+                                                {{-- <a href=""
                                                     class="btn btn-warning btn-sm" data-id="{{ $item->id }}">
-                                                    Status</a>
+                                                    Status</a> --}}
 
 
 
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <a href="{{route('admin.brand.add')}}" class="btn btn-primary">Add Brand</a>
+                    <a href="{{route('admin.brand.form')}}" class="btn btn-primary">Add Brand</a>
                 </div>
             </div>
 
@@ -124,6 +124,58 @@
         <script>
             $(document).ready(function () {
                 let table = new DataTable('#myTable');
+
+
+                $(".delete_item").click(function(e) {
+                    e.preventDefault();
+                    let id = $(this).attr('data-id');
+                    // alert(id);
+
+                    swal({
+                            title: "Are you sure?",
+                            text: "Once deleted, you will not be able to recover this data!",
+                            icon: "warning",
+                            buttons: true,
+                            dangerMode: true,
+                        })
+                        .then((willDelete) => {
+                            if (willDelete) {
+
+                                $.ajax({
+                                    type: "GET",
+                                    url: "{{ route('admin.brand.delete') }}",
+                                    data: {
+                                        id: id
+                                    },
+                                    success: function(response) {
+                                        console.log(response);
+                                        if (response.success == true) {
+                                            swal(response.message, {
+                                                icon: "success",
+                                            });
+
+                                            // $("#trRow" + id).fadeOut(300, function() {
+                                            //     $("#trRow" + id).remove();
+                                            // });
+
+                                            // location.reload();
+
+                                            setTimeout(() => {
+                                                location.reload();
+                                            }, 1500);
+
+                                        } else {
+                                            alert(response.message);
+                                        }
+                                    }
+                                });
+
+                            }
+                            // else {
+                            //   swal("Your data is safe!");
+                            // }
+                        });
+                });
             });
         </script>
     @endsection

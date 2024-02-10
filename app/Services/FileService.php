@@ -1,7 +1,7 @@
 <?php
 namespace App\Services;
 
-use File;
+use Illuminate\Support\Facades\File;
 
 class FileService
 {
@@ -17,16 +17,12 @@ class FileService
     public static function delete($image){
 
         $destination = public_path().'/backend_images/'.$image;
-        $thumb_path = public_path().'/backend_images/thumb/'.$image;
 
         if ( File::exists($destination)) {
             File::delete($destination);
         }
-        if ( File::exists($thumb_path)) {
-            File::delete($thumb_path);
-        }
         return true;
     }
 
-    
+
 }
