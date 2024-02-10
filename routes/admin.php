@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\Brand\BrandController;
+use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Category\SubCategoryController;
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IndexController;
@@ -52,6 +54,24 @@ Route::group(['namespace' => 'Admin'], function () {
             Route::post('submit', [BrandController::class, 'submit'])->name('submit');
             Route::get('status/{id}', [BrandController::class, 'status'])->name('status');
             Route::get('delete', [BrandController::class, 'delete'])->name('delete');
+        });
+
+        //Category Routes
+        Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
+            Route::get('list', [CategoryController::class, 'list'])->name('list');
+            Route::get('form/{id?}', [CategoryController::class, 'form'])->name('form');
+            Route::post('submit', [CategoryController::class, 'submit'])->name('submit');
+            Route::get('status/{id}', [CategoryController::class, 'status'])->name('status');
+            Route::get('delete', [CategoryController::class, 'delete'])->name('delete');
+        });
+
+        //SubCategory Routes
+        Route::group(['prefix' => 'sub/category', 'as' => 'sub.category.'], function () {
+            Route::get('list', [SubCategoryController::class, 'list'])->name('list');
+            Route::get('form/{id?}', [SubCategoryController::class, 'form'])->name('form');
+            Route::post('submit', [SubCategoryController::class, 'submit'])->name('submit');
+            Route::get('status/{id}', [SubCategoryController::class, 'status'])->name('status');
+            Route::get('delete', [SubCategoryController::class, 'delete'])->name('delete');
         });
 
 

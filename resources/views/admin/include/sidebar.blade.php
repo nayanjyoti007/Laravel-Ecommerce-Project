@@ -24,6 +24,31 @@
         </ul>
     </li>
 
+    {{-- Category Start --}}
+    <li class="menu-item @yield('catrgoryOpen')">
+        <a href="javascript:void(0)" class="menu-link menu-toggle">
+            <i class="menu-icon fa fa-black-tie" aria-hidden="true"></i>
+            <div data-i18n="Form Elements"> Category </div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item @yield('categorymenu')">
+                <a href="{{ route('admin.category.list') }}" class="menu-link">
+                    <!-- <i class="menu-icon fa fa-external-link" aria-hidden="true"></i> -->
+                    <div data-i18n="Basic Inputs">All Category</div>
+                </a>
+            </li>
+
+            <li class="menu-item @yield('subcategorymenu')">
+                <a href="{{ route('admin.sub.category.list') }}" class="menu-link">
+                    <!-- <i class="menu-icon fa fa-external-link" aria-hidden="true"></i> -->
+                    <div data-i18n="Basic Inputs">All Sub Category</div>
+                </a>
+            </li>
+
+        </ul>
+    </li>
+    {{-- Category End  --}}
+
 
 
 
