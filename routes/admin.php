@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Brand\BrandController;
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IndexController;
@@ -41,6 +42,14 @@ Route::group(['namespace' => 'Admin'], function () {
             Route::post('submit', [ProfileController::class, 'submit'])->name('submit');
             Route::get('/change-password/{id}', [ProfileController::class, 'changepassword'])->name('changepassword');
             Route::post('change-password-submit', [ProfileController::class, 'changePasswordSubmit'])->name('changePasswordSubmit');
+        });
+
+
+        //Brand Routes
+        Route::group(['prefix' => 'brand', 'as' => 'brand.'], function () {
+            Route::get('/view', [BrandController::class, 'BrandView'])->name('all');
+            Route::get('/add', [BrandController::class, 'BrandAdd'])->name('add');
+            Route::post('/store', [BrandController::class, 'BrandStore'])->name('store');
         });
 
 

@@ -9,6 +9,20 @@
     </li>
 
 
+    <li class="menu-item @yield('brandOpen')">
+        <a href="javascript:void(0)" class="menu-link menu-toggle">
+            <i class="menu-icon fa fa-black-tie" aria-hidden="true"></i>
+            <div data-i18n="Form Elements"> Brand </div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item @yield('brandmenu')">
+                <a href="{{ route('admin.brand.all') }}" class="menu-link">
+                    <!-- <i class="menu-icon fa fa-external-link" aria-hidden="true"></i> -->
+                    <div data-i18n="Basic Inputs">All Brand</div>
+                </a>
+            </li>
+        </ul>
+    </li>
 
 
 

@@ -38,6 +38,9 @@
 
     <link rel="stylesheet" href="{{ asset('backend_assets/vendor/libs/apex-charts/apex-charts.css') }}" />
 
+
+     <!-- Data Table CSS -->
+     <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -48,7 +51,7 @@
     <script src="{{ asset('backend_assets/js/config.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('backend_assets/css/new.css') }}">
     <link rel="stylesheet" href="{{ asset('backend_assets/css/responsive.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('backend_assets/vendor/libs/select2/select2.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
 
@@ -204,6 +207,8 @@
 
     <!-- Core JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- build:js assets/vendor/js/core.js -->
