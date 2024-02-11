@@ -45,6 +45,14 @@
                 </a>
             </li>
 
+
+            <li class="menu-item @yield('subsubcategorymenu')">
+                <a href="{{ route('admin.sub.sub.category.list') }}" class="menu-link">
+                    <!-- <i class="menu-icon fa fa-external-link" aria-hidden="true"></i> -->
+                    <div data-i18n="Basic Inputs">All Sub Sub Category</div>
+                </a>
+            </li>
+
         </ul>
     </li>
     {{-- Category End  --}}

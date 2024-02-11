@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Brand\BrandController;
 use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Category\SubCategoryController;
+use App\Http\Controllers\Admin\Category\SubSubCategoryController;
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IndexController;
@@ -73,6 +74,18 @@ Route::group(['namespace' => 'Admin'], function () {
             Route::get('status/{id}', [SubCategoryController::class, 'status'])->name('status');
             Route::get('delete', [SubCategoryController::class, 'delete'])->name('delete');
         });
+
+
+    //Sub->SubCategory Routes
+    Route::group(['prefix' => 'sub/sub/category', 'as' => 'sub.sub.category.'], function () {
+        Route::get('list', [SubSubCategoryController::class, 'list'])->name('list');
+        Route::get('form/{id?}', [SubSubCategoryController::class, 'form'])->name('form');
+        Route::post('submit', [SubSubCategoryController::class, 'submit'])->name('submit');
+        Route::get('status/{id}', [SubSubCategoryController::class, 'status'])->name('status');
+        Route::get('delete', [SubSubCategoryController::class, 'delete'])->name('delete');
+        Route::get('fetch-subcategory/{id}', [SubSubCategoryController::class, 'fetchSubCat'])->name('fetchSubCat');
+
+    });
 
 
 
