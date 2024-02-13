@@ -52,9 +52,8 @@
     <link rel="stylesheet" href="{{ asset('backend_assets/css/new.css') }}">
     <link rel="stylesheet" href="{{ asset('backend_assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('backend_assets/vendor/libs/select2/select2.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('backend_assets/vendor/libs/tagify/tagify.css') }}" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
-
-
     @yield('mycss')
 </head>
 

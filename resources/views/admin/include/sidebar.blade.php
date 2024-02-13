@@ -8,7 +8,7 @@
         </a>
     </li>
 
-
+    {{-- Brand Start --}}
     <li class="menu-item @yield('brandOpen')">
         <a href="javascript:void(0)" class="menu-link menu-toggle">
             <i class="menu-icon fa fa-black-tie" aria-hidden="true"></i>
@@ -23,6 +23,7 @@
             </li>
         </ul>
     </li>
+    {{-- Brand End --}}
 
     {{-- Category Start --}}
     <li class="menu-item @yield('catrgoryOpen')">
@@ -56,6 +57,32 @@
         </ul>
     </li>
     {{-- Category End  --}}
+
+
+    {{-- Products Start --}}
+    <li class="menu-item @yield('productOpen')">
+        <a href="javascript:void(0)" class="menu-link menu-toggle">
+            <i class="menu-icon fa fa-black-tie" aria-hidden="true"></i>
+            <div data-i18n="Form Elements"> Products </div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item @yield('addproductmenu')">
+                <a href="{{ route('admin.product.add') }}" class="menu-link">
+                    <!-- <i class="menu-icon fa fa-external-link" aria-hidden="true"></i> -->
+                    <div data-i18n="Basic Inputs">Add Product</div>
+                </a>
+            </li>
+
+            <li class="menu-item @yield('manageproductmenu')">
+                <a href="{{ route('admin.brand.list') }}" class="menu-link">
+                    <!-- <i class="menu-icon fa fa-external-link" aria-hidden="true"></i> -->
+                    <div data-i18n="Basic Inputs">Manage Product</div>
+                </a>
+            </li>
+
+        </ul>
+    </li>
+    {{-- Product End  --}}
 
 
 

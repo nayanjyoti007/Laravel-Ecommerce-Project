@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Category\SubSubCategoryController;
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IndexController;
+use App\Http\Controllers\Admin\Product\ProductController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use Illuminate\Support\Facades\Route;
@@ -84,7 +85,20 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('status/{id}', [SubSubCategoryController::class, 'status'])->name('status');
         Route::get('delete', [SubSubCategoryController::class, 'delete'])->name('delete');
         Route::get('fetch-subcategory/{id}', [SubSubCategoryController::class, 'fetchSubCat'])->name('fetchSubCat');
+    });
 
+
+    // Product Routes
+    Route::group(['prefix' => 'product', 'as' => 'product.'], function () {
+        Route::get('add', [ProductController::class, 'addProduct'])->name('add');
+        Route::get('fetch-subcategory/{id}', [ProductController::class, 'fetchSubCat'])->name('fetchSubCat');
+
+        // Route::get('list', [ProductController::class, 'list'])->name('list');
+        // Route::get('form/{id?}', [ProductController::class, 'form'])->name('form');
+        // Route::post('submit', [ProductController::class, 'submit'])->name('submit');
+        // Route::get('status/{id}', [ProductController::class, 'status'])->name('status');
+        // Route::get('delete', [ProductController::class, 'delete'])->name('delete');
+        // Route::get('fetch-subcategory/{id}', [ProductController::class, 'fetchSubCat'])->name('fetchSubCat');
     });
 
 
